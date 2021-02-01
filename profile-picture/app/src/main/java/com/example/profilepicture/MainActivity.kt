@@ -1,7 +1,9 @@
 package com.example.profilepicture
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
+import android.widget.ImageView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -12,11 +14,14 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.profilepicture.databinding.ActivityMainBinding
+import com.example.profilepicture.utils.getHeaderView
+import com.example.profilepicture.utils.setImageFromUri
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    lateinit var headerImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +44,19 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val header = getHeaderView(navView)
+        headerImage = header.findViewById(R.id.imageViewHeader)
     }
+
+    fun setImageToHeader(uri: Uri) {
+        setImageFromUri(uri, headerImage)
+    }
+
+    fun resetHeaderImage() {
+        headerImage.setImageResource(R.drawable.ic_menu_camera)
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
