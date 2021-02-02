@@ -1,4 +1,4 @@
-package com.example.datasharing.ui.slideshow
+package com.example.datasharing.ui.export
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class SlideshowViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is slideshow Fragment"
+        value = "Export"
     }
     val text: LiveData<String> = _text
 }
