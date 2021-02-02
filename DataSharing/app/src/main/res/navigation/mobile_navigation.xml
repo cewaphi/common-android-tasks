@@ -12,14 +12,25 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_import"
         android:name="com.example.datasharing.ui.import.ImportFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:label="@string/import_lc"
+        tools:layout="@layout/fragment_import" >
+
+        <argument
+            android:name="uri"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="null" />
+
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_export"
         android:name="com.example.datasharing.ui.export.ExportFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:label="@string/export_lc"
+        tools:layout="@layout/fragment_export" />
+
+    <action android:id="@+id/action_global_nav_import" app:destination="@id/nav_import"/>
+
 </navigation>

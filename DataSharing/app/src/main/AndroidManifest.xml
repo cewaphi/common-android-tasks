@@ -15,8 +15,17 @@
             android:theme="@style/Theme.DataSharing.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.OPEN_DOCUMENT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+                <data android:scheme="content" />
+                <data android:host="*" />
+                <data android:mimeType="text/comma-separated-values" />
+                <data android:mimeType="text/csv" />
             </intent-filter>
         </activity>
 

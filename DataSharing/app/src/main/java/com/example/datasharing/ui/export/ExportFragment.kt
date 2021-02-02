@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.datasharing.databinding.FragmentSlideshowBinding
+import com.example.datasharing.databinding.FragmentExportBinding
 import com.example.datasharing.utils.Exporter
 import com.example.datasharing.utils.getUriForFile
 import com.example.datasharing.utils.shareCsv
@@ -18,7 +18,7 @@ import java.util.*
 class ExportFragment : Fragment() {
 
     private lateinit var slideshowViewModel: ExportViewModel
-    private var _binding: FragmentSlideshowBinding? = null
+    private var _binding: FragmentExportBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -32,7 +32,7 @@ class ExportFragment : Fragment() {
         slideshowViewModel =
             ViewModelProvider(this).get(ExportViewModel::class.java)
 
-        _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
+        _binding = FragmentExportBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.exportBtn
