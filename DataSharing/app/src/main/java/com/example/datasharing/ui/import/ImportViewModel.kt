@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class GalleryViewModel : ViewModel() {
+class ImportViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "Import"
