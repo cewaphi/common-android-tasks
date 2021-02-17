@@ -1,0 +1,2 @@
+rootProject.name = "ML Kit Language Detection"
+include ':app'
